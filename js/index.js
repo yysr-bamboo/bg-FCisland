@@ -6,7 +6,7 @@ const CONFIG = {
     // IMAGE_A: "./assets/images/cards_A.png",
     // IMAGE_B: "./assets/images/cards_B.png"
     IMAGE_A: "https://i.imgs.ovh/2026/03/06/Oa8b51.png",
-    IMAGE_B: "https://www.imgur.la/images/2026/03/06/cards_B.png"
+    IMAGE_B: "./assets/images/cards_B.png"
 };
 
 const APP = {};
