@@ -1,0 +1,292 @@
+:root {
+    --page-padding: 24px;
+    --panel-max-width: 1120px;
+    --surface-bg: #fff6df;
+    --surface-border: #caa56a;
+    --text-main: #2f2418;
+    --text-muted: #6e5840;
+    --button-primary-bg: #207a68;
+    --button-primary-bg-hover: #186657;
+    --button-secondary-bg: #f0e1c2;
+    --button-secondary-bg-hover: #e7d2a7;
+    --danger-bg: #ab3e3e;
+    --danger-bg-hover: #8e3232;
+    --board-bg: #f3deb3;
+    --cell-bg: #f8efdc;
+    --cell-border: #c49a5a;
+    --card-size: 94px;
+    --card-size-small: 74px;
+    --card-radius: 14px;
+    --shadow: 0 10px 26px rgba(63, 42, 24, 0.18);
+    --transition-fast: 0.2s ease;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    color: var(--text-main);
+    background: radial-gradient(circle at 18% 10%, #ffeac0 0%, #ffeac000 30%), radial-gradient(circle at 82% 16%, #ddf5ff 0%, #ddf5ff00 24%), linear-gradient(160deg, #f7f0db 0%, #f2e5c6 45%, #e6d5af 100%);
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--page-padding);
+}
+
+.page-shell {
+    width: 100%;
+    max-width: var(--panel-max-width);
+    background: var(--surface-bg);
+    border: 2px solid var(--surface-border);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.title {
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    border: 0;
+    border-radius: 999px;
+    min-width: 142px;
+    padding: 11px 24px;
+    font-size: 16px;
+    transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    color: #fff;
+    background: var(--button-primary-bg);
+}
+
+.btn-primary:hover {
+    background: var(--button-primary-bg-hover);
+}
+
+.btn-secondary {
+    color: var(--text-main);
+    background: var(--button-secondary-bg);
+}
+
+.btn-secondary:hover {
+    background: var(--button-secondary-bg-hover);
+}
+
+.btn-danger {
+    color: #fff;
+    background: var(--danger-bg);
+}
+
+.btn-danger:hover {
+    background: var(--danger-bg-hover);
+}
+
+.rules-box {
+    max-height: 56vh;
+    overflow: auto;
+    border: 1px solid #d4bd93;
+    border-radius: 14px;
+    background: #fff3d8;
+    padding: 16px;
+    line-height: 1.72;
+    font-size: 15px;
+}
+
+.marine-options {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.marine-option {
+    width: 260px;
+    border: 2px solid #d5b67f;
+    border-radius: 14px;
+    background: #fff9ed;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.marine-option input {
+    width: 18px;
+    height: 18px;
+}
+
+.marine-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.marine-name {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.marine-desc {
+    color: var(--text-muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 16px;
+}
+
+.board-wrap {
+    border: 2px solid var(--cell-border);
+    border-radius: 16px;
+    padding: 14px;
+    background: var(--board-bg);
+}
+
+.board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.board-cell {
+    min-height: calc(var(--card-size) + 14px);
+    border: 2px dashed var(--cell-border);
+    border-radius: 12px;
+    background: var(--cell-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.board-cell.has-card {
+    border-style: solid;
+}
+
+.board-cell.selected {
+    border-color: #1b7c67;
+    background: #d8f6ec;
+}
+
+.board-cell.can-eat {
+    border-color: #c64d3d;
+    background: #ffe8de;
+}
+
+.card {
+    width: var(--card-size);
+    height: var(--card-size);
+    border-radius: var(--card-radius);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.14);
+    position: relative;
+}
+
+.card.small {
+    width: var(--card-size-small);
+    height: var(--card-size-small);
+}
+
+.card-badge {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    min-width: 24px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.68);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 999px;
+    padding: 5px 6px;
+}
+
+.panel {
+    border: 2px solid #d4b16e;
+    border-radius: 16px;
+    background: #fff8e8;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel h3 {
+    font-size: 18px;
+}
+
+.text-small {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.marine-chip-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.marine-chip {
+    border-radius: 999px;
+    background: #ebf7f3;
+    border: 1px solid #8ec0b3;
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.end-box {
+    border: 2px solid #d2ad66;
+    border-radius: 14px;
+    background: #fff7e2;
+    padding: 16px;
+    text-align: center;
+}
+
+.end-score {
+    font-size: 38px;
+    line-height: 1;
+    margin: 6px 0 10px;
+}

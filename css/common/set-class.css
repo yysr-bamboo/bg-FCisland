@@ -1,0 +1,29 @@
+/* 隐藏块元素 */
+
+.display-none {
+    display: none !important;
+}
+
+
+/* 禁止用户选择 */
+
+.select-none {
+    user-select: none !important;
+    -webkit-user-select: none !important;
+}
+
+
+/* 文本溢出省略号 */
+
+.text-overflow-ellipsis {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+}
+
+
+/* 光标类 */
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
