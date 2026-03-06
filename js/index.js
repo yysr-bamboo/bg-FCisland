@@ -3,10 +3,10 @@ const CONFIG = {
     BOARD_COLS: 4,
     BOARD_ROWS: 4,
     LAND_CARD_COUNT: 16,
-    // IMAGE_A: "./assets/images/cards_A.png",
-    // IMAGE_B: "./assets/images/cards_B.png"
-    IMAGE_A: "https://i.imgs.ovh/2026/03/06/Oa8b51.png",
+    IMAGE_A: "./assets/images/cards_A.png",
     IMAGE_B: "./assets/images/cards_B.png"
+    // IMAGE_A: "https://i.imgs.ovh/2026/03/06/Oa8b51.png",
+    // IMAGE_B: "./assets/images/cards_B.png"
 };
 
 const APP = {};
